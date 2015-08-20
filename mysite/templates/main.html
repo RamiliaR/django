@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Congratulation</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'congratulation/style.css' %}"/>
+</head>
+
+ <body>
+	<div class="top-bar">
+        {% if username %}
+			<div class="sign-in-links">
+				<a href="/congratulation/logout/" class="button">Log out ({{ username }})</a>
+			</div>
+        {% else %}
+			<div class="sign-in-links">
+				<a href="{% url 'congratulation:join' %}" class="button">Sign up</a>
+				<a href="{% url 'congratulation:login' %}" class="button">Sign in</a>
+			</div>
+		{% endif %}
+	</div>
+    <a href="{% url 'congratulation:index' %}"><div class="small-cong-text">Congratulate your relatives and friends!</div></a>
+    {% block con %}{% endblock %}
+	{% block delete %}{% endblock %}
+ </body>
+</html>

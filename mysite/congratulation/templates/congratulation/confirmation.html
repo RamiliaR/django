@@ -1,0 +1,9 @@
+{% extends 'main.html' %}
+
+{% block con %}
+	<div class="headline_on_main_page">
+		Are you sure you want to delete your profile?<br>All information will be removed.
+	</div><br>
+	<a href="{% url 'congratulation:detail' %}" class="button">No</a></div>
+	<a href="{% url 'congratulation:delete_account' %}" class="button">Yes</a></div>
+{% endblock %}

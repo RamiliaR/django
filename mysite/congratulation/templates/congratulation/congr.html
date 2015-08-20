@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+
+{% block con %}
+	<br><div class="text_22px">Text: {{ order.text }}</div>
+	<blockquote><div class="text_19px">Location: {{ order.location }}</div></blockquote>
+	<blockquote><div class="text_19px">Date: {{ order.date }}</div></blockquote>
+	<blockquote><div class="text_19px">Comment: {{ order.comment }}</div></blockquote><br>
+	
+	<div><a href="{% url 'congratulation:detail' %}"class="button">Back to my page</a>
+	<a href="{% url 'congratulation:edit_order' order.id %}"class="button">Edit order</a>
+	<a href="{% url 'congratulation:delete_order' order.id %}" class="button">Delete order</a>
+{% endblock %}

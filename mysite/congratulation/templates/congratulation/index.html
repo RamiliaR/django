@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Congratulation</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'congratulation/style.css' %}"/>
+</head>
+<body>
+    <div class="top-bar">
+        {% if username %}
+			<div class="sign-in-links">
+				<a href="/congratulation/logout/" class="button">Log out ({{ username }})</a>
+			</div>
+        {% else %}
+			<div class="sign-in-links">
+				<a href="{% url 'congratulation:join' %}" class="button">Sign up</a>
+				<a href="{% url 'congratulation:login' %}" class="button">Sign in</a>
+			</div>
+		{% endif %}
+	</div>
+	<div class="headline_on_main_page">Congratulate your relatives and friends!</div>
+	<div class="main_page"> Hello!<br>
+	On this website you can order a congratulation.
+	First you need to register, specify the name and phone number. When you should make an order specifying a greeting text, coordinates, date and time (YYYY-MM-DD HH:MM:SS). You can also leave your desire about your order in the comment form.  In the field  "Location" you should specify the exact coordinates, you can find them on the <a href='https://www.google.ru/maps' target=«_blank»>Google Maps</a> (for example, 55.8040891, 49.1845048,14).
+	Then we will contact you.<br>
+	Good luck!</div><br>
+	
+	<div class="text_20px">Congratulations have already been ordered ...</div>
+	{% if customer_list %}
+		{% for customer in customer_list|dictsort:"last_name" %}
+		<li><div class="main_page_right">{{ customer.last_name|capfirst}} {{customer.first_name|capfirst }}</div></li>
+		{% endfor %}
+	{% else %}
+		<p>No congratulations are available.</p>
+	{% endif %}
+<br>
+<div>
+    {% if username %}
+		<div class="buttons">
+			<a href="{% url 'congratulation:detail' %}" class="button">My page</a>
+		</div>
+	{% endif %}
+</div>
+</body>
+</html>

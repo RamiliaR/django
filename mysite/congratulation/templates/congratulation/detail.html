@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block con %}
+<div class="big-cong-text">{{ customer.first_name|capfirst }} {{ customer.last_name|capfirst }}</div>	
+
+{% if orders_list != None %}
+<ul>
+    {% for order in orders_list %}
+        <li><a href="{% url 'congratulation:congr' order.id %}"><div class="text_20px">Text: {{ order.text }}</div></a></li>
+	    <blockquote><div class="text_19px">Location: {{ order.location }}</div></blockquote>
+        <blockquote><div class="text_19px">Date: {{ order.date }}</div></blockquote>
+		<blockquote><div class="text_19px">Comment: {{ order.comment }}</div></blockquote>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<br><div><a href="{% url 'congratulation:information' %}" class="button">Edit my profile</a>
+<a href="{% url 'congratulation:order' %}" class="button">Make order</a>
+<a href="{% url 'congratulation:confirmation' %}" class="button">Delete account</a></div>
+</ul>
+{% endblock %}

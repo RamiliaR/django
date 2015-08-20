@@ -1,0 +1,121 @@
+li a {
+    color: white;
+}
+
+#header{ 
+    background:darkred;
+    width:715px;
+    height:100px;
+}
+
+body {
+    background: white url("images/background.jpeg") no-repeat;
+	background-size: cover;
+	color: white;
+	font-size: 18px;
+	margin: 15px 20px 15px 40px;
+}
+
+body  a{
+/*
+Вот так связывается стиль тегов, если один вложен в другой
+*/
+ 	color: white;
+}
+
+.head-cong {
+	color: white;
+}
+
+.big-cong-text {
+	font-size: 35px;
+	margin-bottom: 10px;
+}
+
+.small-cong-text {
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+
+.small_2-cong-text {
+	font-size: 17px;
+	margin-bottom: 10px;
+
+}
+
+.text_20px{
+	font-size: 20px;
+	text-align: left;
+}
+
+.text_22px{
+	font-size: 22px;
+	text-align: left;
+}
+
+.text_19px{
+	font-size: 19px;
+	text-align: left;
+	margin: -10px;
+}
+
+.headline_on_main_page{
+	font-size: 40px;
+	text-align: left;
+	margin: 0px;
+}
+
+.main_page{
+	font-size: 19px;
+	text-align: left;
+	padding: 1px 0px;
+}
+
+.main_page_right{
+	font-size: 19px;
+	text-align: left;
+	padding: 1px 43px;
+}
+
+.text20px_margin10px{
+	font-size: 20px;
+	margin-bottom: 10px;
+	text-align: left;
+	margin: 10px;
+}
+
+.sign-in-links {
+	text-align: right;
+	font-size: 20px;
+}
+
+.forms {
+	padding: 5px 0px;
+	text-align: left;
+}
+
+.forms_20px {
+	font-size: 20px;
+	padding: 5px 55px;
+	text-align: left;
+}
+
+.buttons {
+	text-align: left;
+	font-size: 20px;
+}
+
+a.button {
+  display: inline-block;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  padding: .2em 1em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+a.button:hover { background: rgba(255,255,255,.2); }
+a.button:active { background: white; }

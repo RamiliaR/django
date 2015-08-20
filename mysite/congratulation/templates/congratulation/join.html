@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block con %}
+	<div>
+		<form action="/congratulation/join/" method="post">
+			{% csrf_token %}
+			<table>
+			{{ form }}
+			</table>
+			<input class="button" type="submit" value="Join">
+		</form>
+	</div>
+{% endblock %}
